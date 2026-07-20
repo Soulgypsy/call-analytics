@@ -13,4 +13,4 @@ Below are a couple screenshots of the site as a preview:
 
 <img width="1287" height="446" alt="Screenshot 2026-07-20 114258" src="https://github.com/user-attachments/assets/271c7dd1-04d8-4453-b509-7b0e431bbea0" />
 
-And here is the deployment link: insert link here once uploaded
+And here is the deployment link: [HERE](https://call-analytics-chi.vercel.app/)
