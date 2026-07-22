@@ -96,7 +96,15 @@ function App() {
   }, [isDark])
 
   return (
-    <><div className="p-6 grid md:grid-cols-2 gap-4 text-center">
+    <>
+      <header className="p-6 items-center justify-between text-center">
+        <div>
+          <h1 className="text-3xl font-bold">Call Analytics</h1>
+          <p className="text-sm text-muted-foreground">Overview of recent call data given the API data</p>
+          <p className="text-sm text-muted-foreground">BEFORE YOU ASK! The data has been checked, and has all calls listed as outbound and all calls as failed, along with each of them as a unique city. So do not be surprised about it.</p>
+        </div>
+      </header>
+      <div className="p-6 grid md:grid-cols-2 gap-4 text-center">
       {error ? (
         <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-700">
           Error loading data: {error.message}
@@ -108,19 +116,20 @@ function App() {
           <CardTitle>Total Calls Received</CardTitle>
           <CardDescription>The total amount of calls we have received</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-lg">
           <p>{data.length}</p>
         </CardContent>
         <CardFooter>
         </CardFooter>
       </Card>
 
+
       <Card>
         <CardHeader className="font-bold">
           <CardTitle>Total Call Costs</CardTitle>
           <CardDescription>The total cost of all calls we have received</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-lg">
           <p>${totalCost.toFixed(2)}</p>
         </CardContent>
         <CardFooter>
@@ -132,7 +141,7 @@ function App() {
           <CardTitle>Average Call Duration</CardTitle>
           <CardDescription>The average duration of all calls we have received</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-lg">
           <p>{averageCallTime(data).toFixed(2)} seconds</p>
         </CardContent>
         <CardFooter>
@@ -144,7 +153,7 @@ function App() {
           <CardTitle>Answered Calls</CardTitle>
           <CardDescription>How many calls were marked as answered</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-lg">
           <p>{answeredCount} calls</p>
         </CardContent>
         <CardFooter>
@@ -156,7 +165,7 @@ function App() {
           <CardTitle>Unanswered Calls</CardTitle>
           <CardDescription>How many calls were marked as unanswered</CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="text-lg">
           <p>{totalUnansweredCalls(data)} calls</p>
         </CardContent>
         <CardFooter>
@@ -268,6 +277,11 @@ function App() {
       </Card>
 
   <ThemeToggleButton isDark={isDark} setIsDark={setIsDark} />
+
+  <footer>  
+    <p> Built with TypeScript, Vite/React, and shadcn components.</p>
+    <p>&copy; Jack Bates 2026</p>
+  </footer>
 </div></>
   )
 }
