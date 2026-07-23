@@ -104,7 +104,7 @@ function App() {
           <p className="text-sm text-muted-foreground">BEFORE YOU ASK! The data has been checked, and has all calls listed as outbound and all calls as failed, along with each of them as a unique city. So do not be surprised about it.</p>
         </div>
       </header>
-      <div className="p-6 grid md:grid-cols-2 gap-4 text-center">
+      <div className="p-6 grid md:grid-cols-5 gap-4 text-center">
       {error ? (
         <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-red-700">
           Error loading data: {error.message}
@@ -112,7 +112,7 @@ function App() {
       ) : null}
 
       <Card>
-        <CardHeader className="text-center font-bold">
+        <CardHeader className="font-bold">
           <CardTitle>Total Calls Received</CardTitle>
           <CardDescription>The total amount of calls we have received</CardDescription>
         </CardHeader>
