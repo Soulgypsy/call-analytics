@@ -176,7 +176,7 @@ function App() {
       <Card size="sm">
         <CardHeader className="font-bold">
           <CardTitle>Call Duration Statistics</CardTitle>
-          <CardDescription>Comparison of longest, shortest, and average call durations</CardDescription>
+          <CardDescription>Comparison of longest, shortest, and average call durations (that aren't zero seconds)</CardDescription>
         </CardHeader>
         <CardContent>
           <ChartContainer config={chartConfig}>
