@@ -85,14 +85,16 @@ export function getTableData(data: CallRecord[]) {
       (a, b) =>
         new Date(b.callStartTime).getTime() - new Date(a.callStartTime).getTime(),
     )
-    .slice(0, 10)
+    .slice(0, 25)
     .map((call) => ({
-      callerName: call.callerName ?? 'Unknown',
-      callerNumber: call.callerNumber ?? '',
-      receiverNumber: call.receiverNumber ?? '',
+      callerName: call.callerName || 'Redacted',
+      callerNumber: call.callerNumber || 'Hidden',
+      receiverNumber: call.receiverNumber || 'Hidden',
       city: call.city ?? 'Unknown',
       duration: Number(call.callDuration) || 0,
       cost: call.callCost ?? 0,
       startTime: call.callStartTime,
+      endTime: call.callEndTime,
+      answered: call.callStatus,
     }))
 }
