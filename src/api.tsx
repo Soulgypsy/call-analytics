@@ -1,4 +1,4 @@
-import type { CallFilters } from "./components/FilterSection"
+import type { CallFilters } from "./types/call-filters"
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'
 const AUTH_TOKEN_KEY = 'callDataAuthToken'

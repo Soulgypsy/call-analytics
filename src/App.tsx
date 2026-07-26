@@ -50,7 +50,8 @@ import {
 import { Bar, BarChart, CartesianGrid, XAxis, Line, LineChart } from "recharts"
 import { ThemeToggleButton } from "./components/ThemeToggle"
 import { LoginModal } from "./components/LoginModal"
-import { FilterSection, type CallFilters } from "./components/FilterSection"
+import { FilterSection } from "./components/FilterSection"
+import type { CallFilters } from "./types/call-filters"
 
 
 function App() {
