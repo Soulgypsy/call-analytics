@@ -347,9 +347,6 @@ function App() {
             filters={filters} 
             onFiltersChange={setFilters} 
             userRole={currentRole}
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
           />
 
           <div className="p-6 space-y-10 text-center">
@@ -387,6 +384,30 @@ function App() {
                     ))}
                   </TableBody>
                 </Table>
+
+                <div className="mt-4 flex items-center justify-between border-t pt-4">
+                  <div className="text-sm text-muted-foreground">
+                    Page {currentPage} of {totalPages}
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setCurrentPage(currentPage - 1)}
+                      disabled={currentPage === 1}
+                      className="rounded-md border px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50 hover:bg-muted"
+                      type="button"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      onClick={() => setCurrentPage(currentPage + 1)}
+                      disabled={currentPage >= totalPages}
+                      className="rounded-md border px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50 hover:bg-muted"
+                      type="button"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </div>
